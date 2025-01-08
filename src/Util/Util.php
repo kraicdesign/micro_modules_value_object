@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Util;
+namespace DddModule\ValueObject\Util;
 
 /**
  * Class Util.

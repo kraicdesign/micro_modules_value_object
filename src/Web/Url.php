@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Web;
+namespace DddModule\ValueObject\Web;
 
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\ValueObjectInterface;
 use Exception;
 
 use function parse_url;
@@ -73,7 +73,7 @@ class Url implements ValueObjectInterface
         $user = $user ? new StringLiteral($user) : new StringLiteral('');
         $pass = $pass ? new StringLiteral($pass) : new StringLiteral('');
         $domain = Domain::specifyType($host);
-        $path = new Path(parse_url($urlString, PHP_URL_PATH));
+        $path = new Path(parse_url($urlString, PHP_URL_PATH) ?: '');
         $portNumber = $port ? new PortNumber($port) : new NullPortNumber();
         $query = $queryString ? new QueryString(sprintf('?%s', $queryString)) : new NullQueryString();
         $fragment = $fragmentId ? new FragmentIdentifier(sprintf('#%s', $fragmentId)) : new NullFragmentIdentifier();

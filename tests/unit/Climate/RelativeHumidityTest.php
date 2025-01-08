@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Climate;
+namespace DddModule\ValueObject\Tests\Unit\Climate;
 
-use MicroModule\ValueObject\Climate\RelativeHumidity;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Climate\RelativeHumidity;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
 
 class RelativeHumidityTest extends TestCase
 {
@@ -17,11 +18,10 @@ class RelativeHumidityTest extends TestCase
         $this->assertTrue($fromNativeRelHum->sameValueAs($constructedRelHum));
     }
 
-    /**
-     * @expectedException \MicroModule\ValueObject\Exception\InvalidNativeArgumentException
-     */
     public function testInvalidRelativeHumidity(): void
     {
+        $this->expectException(InvalidNativeArgumentException::class);
+
         new RelativeHumidity(128);
     }
 }

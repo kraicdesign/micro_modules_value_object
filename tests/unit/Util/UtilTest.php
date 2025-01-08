@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Util;
+namespace DddModule\ValueObject\Tests\Unit\Util;
 
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\Util\Util;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Util\Util;
 
 class UtilTest extends TestCase
 {
@@ -21,6 +21,6 @@ class UtilTest extends TestCase
     public function testGetClassAsString(): void
     {
         $util = new Util();
-        $this->assertEquals('MicroModule\ValueObject\Util\Util', Util::getClassAsString($util));
+        $this->assertEquals('DddModule\ValueObject\Util\Util', Util::getClassAsString($util));
     }
 }

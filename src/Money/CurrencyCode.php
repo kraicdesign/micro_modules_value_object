@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Money;
+namespace DddModule\ValueObject\Money;
 
-use MicroModule\ValueObject\Enum\Enum;
+use DddModule\ValueObject\Enum\Enum;
 
 /**
  * Class CurrencyCode.

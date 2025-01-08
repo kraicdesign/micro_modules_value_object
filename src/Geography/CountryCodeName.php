@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Geography;
+namespace DddModule\ValueObject\Geography;
 
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
 
 /**
  * Class CountryCodeName.

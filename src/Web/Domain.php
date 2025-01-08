@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Web;
+namespace DddModule\ValueObject\Web;
 
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
 
 /**
  * Class Domain.

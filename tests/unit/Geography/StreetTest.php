@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Geography;
+namespace DddModule\ValueObject\Tests\Unit\Geography;
 
-use MicroModule\ValueObject\Geography\Street;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use BadMethodCallException;
+use DddModule\ValueObject\Geography\Street;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class StreetTest extends TestCase
 {
@@ -27,9 +28,10 @@ class StreetTest extends TestCase
         $this->assertTrue($this->street->sameValueAs($fromNativeStreet));
     }
 
-    /** @expectedException \BadMethodCallException */
     public function testInvalidFromNative(): void
     {
+        $this->expectException(BadMethodCallException::class);
+
         Street::fromNative('Abbey Rd');
     }
 

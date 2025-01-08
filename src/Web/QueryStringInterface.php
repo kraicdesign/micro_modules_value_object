@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Web;
+namespace DddModule\ValueObject\Web;
 
-use MicroModule\ValueObject\Structure\Dictionary;
+use DddModule\ValueObject\Structure\Dictionary;
 
 /**
  * Interface QueryStringInterface.

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Number;
+namespace DddModule\ValueObject\Tests\Unit\Number;
 
-use MicroModule\ValueObject\Exception\InvalidNativeArgumentException;
-use MicroModule\ValueObject\Number\Integer;
-use MicroModule\ValueObject\Number\Natural;
-use MicroModule\ValueObject\Number\Real;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Number\Integer;
+use DddModule\ValueObject\Number\Natural;
+use DddModule\ValueObject\Number\Real;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 use TypeError;
 
 class RealTest extends TestCase

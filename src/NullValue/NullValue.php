@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\NullValue;
+namespace DddModule\ValueObject\NullValue;
 
-use MicroModule\ValueObject\Util\Util;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Util\Util;
+use DddModule\ValueObject\ValueObjectInterface;
 use BadMethodCallException;
 
 /**

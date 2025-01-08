@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Geography;
+namespace DddModule\ValueObject\Geography;
 
-use MicroModule\ValueObject\Exception\InvalidNativeArgumentException;
-use MicroModule\ValueObject\Number\Real;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Number\Real;
 use League\Geotools\Coordinate\Coordinate as BaseCoordinate;
 
 /**

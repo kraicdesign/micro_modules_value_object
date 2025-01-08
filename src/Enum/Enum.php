@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Enum;
+namespace DddModule\ValueObject\Enum;
 
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\ValueObjectInterface;
 use MabeEnum\Enum as BaseEnum;
 use MabeEnum\EnumSerializableTrait;
 

@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Web;
+namespace DddModule\ValueObject\Tests\Unit\Web;
 
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\Web\Path;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Web\Path;
 
 class PathTest extends TestCase
 {
@@ -16,9 +17,9 @@ class PathTest extends TestCase
         $this->assertEquals($pathString, $path->toNative());
     }
 
-    /** @expectedException MicroModule\ValueObject\Exception\InvalidNativeArgumentException */
     public function testInvalidPath(): void
     {
+        $this->expectException(InvalidNativeArgumentException::class);
         new Path('//valid?');
     }
 }

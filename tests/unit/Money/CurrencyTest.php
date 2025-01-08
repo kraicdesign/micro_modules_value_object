@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Money;
+namespace DddModule\ValueObject\Tests\Unit\Money;
 
-use MicroModule\ValueObject\Money\Currency;
-use MicroModule\ValueObject\Money\CurrencyCode;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Money\Currency;
+use DddModule\ValueObject\Money\CurrencyCode;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class CurrencyTest extends TestCase
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Web;
+namespace DddModule\ValueObject\Web;
 
-use MicroModule\ValueObject\Enum\Enum;
+use DddModule\ValueObject\Enum\Enum;
 
 /**
  * Class IPAddressVersion.

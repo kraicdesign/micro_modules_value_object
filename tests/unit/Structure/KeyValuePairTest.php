@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Structure;
+namespace DddModule\ValueObject\Tests\Unit\Structure;
 
 use BadMethodCallException;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Structure\KeyValuePair;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Structure\KeyValuePair;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class KeyValuePairTest extends TestCase
 {

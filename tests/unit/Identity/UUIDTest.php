@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Identity;
+namespace DddModule\ValueObject\Tests\Unit\Identity;
 
-use MicroModule\ValueObject\Identity\UUID;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Identity\UUID;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class UUIDTest extends TestCase
 {
@@ -14,7 +15,7 @@ class UUIDTest extends TestCase
     {
         $uuidString = UUID::generateAsString();
 
-        $this->assertRegexp('/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/', $uuidString);
+        $this->assertMatchesRegularExpression('/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/', $uuidString);
     }
 
     public function testFromNative(): void
@@ -39,9 +40,10 @@ class UUIDTest extends TestCase
         $this->assertFalse($uuid1->sameValueAs($mock));
     }
 
-    /** @expectedException MicroModule\ValueObject\Exception\InvalidNativeArgumentException */
     public function testInvalid(): void
     {
+        $this->expectException(InvalidNativeArgumentException::class);
+
         new UUID('invalid');
     }
 }

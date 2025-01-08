@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\DateTime;
+namespace DddModule\ValueObject\DateTime;
 
-use MicroModule\ValueObject\Exception\InvalidNativeArgumentException;
-use MicroModule\ValueObject\Number\Natural;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Number\Natural;
+use DddModule\ValueObject\ValueObjectInterface;
 use DateTime;
 use Exception;
 

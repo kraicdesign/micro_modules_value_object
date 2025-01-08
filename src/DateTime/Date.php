@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\DateTime;
+namespace DddModule\ValueObject\DateTime;
 
-use MicroModule\ValueObject\DateTime\Exception\InvalidDateException;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\DateTime\Exception\InvalidDateException;
+use DddModule\ValueObject\ValueObjectInterface;
 use DateTime;
 use DateTimeInterface;
 use Exception;

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Number;
+namespace DddModule\ValueObject\Tests\Unit\Number;
 
-use MicroModule\ValueObject\Number\Complex;
-use MicroModule\ValueObject\Number\Real;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Number\Complex;
+use DddModule\ValueObject\Number\Real;
+use DddModule\ValueObject\Tests\Unit\TestCase;
 
 class ComplexTest extends TestCase
 {
     /** @var Complex */
-    private $complex;
+    private Complex $complex;
 
     protected function setUp(): void
     {

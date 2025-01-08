@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\DateTime;
+namespace DddModule\ValueObject\DateTime;
 
-use MicroModule\ValueObject\Enum\Enum;
+use DddModule\ValueObject\Enum\Enum;
 use DateTime;
 use DateTimeInterface;
 use Exception;

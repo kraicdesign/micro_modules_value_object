@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Web;
+namespace DddModule\ValueObject\Web;
 
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\ValueObjectInterface;
 
 /**
  * Interface PortNumberInterface.

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Web;
+namespace DddModule\ValueObject\Tests\Unit\Web;
 
-use MicroModule\ValueObject\Exception\InvalidNativeArgumentException;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\Web\IPAddress;
-use MicroModule\ValueObject\Web\IPAddressVersion;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Web\IPAddress;
+use DddModule\ValueObject\Web\IPAddressVersion;
 
 class IPAddressTest extends TestCase
 {

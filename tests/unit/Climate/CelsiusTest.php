@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Climate;
+namespace DddModule\ValueObject\Tests\Unit\Climate;
 
-use MicroModule\ValueObject\Climate\Celsius;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Climate\Celsius;
+use DddModule\ValueObject\Tests\Unit\TestCase;
 
 class CelsiusTest extends TestCase
 {

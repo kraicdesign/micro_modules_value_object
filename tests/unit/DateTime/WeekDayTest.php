@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\DateTime;
+namespace DddModule\ValueObject\Tests\Unit\DateTime;
 
-use MicroModule\ValueObject\DateTime\WeekDay;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\DateTime\WeekDay;
+use DddModule\ValueObject\Tests\Unit\TestCase;
 
 class WeekDayTest extends TestCase
 {

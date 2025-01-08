@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\DateTime;
+namespace DddModule\ValueObject\DateTime;
 
-use MicroModule\ValueObject\Number\Integer;
+use DddModule\ValueObject\Number\Integer;
 use DateTime;
 use Exception;
 

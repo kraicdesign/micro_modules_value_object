@@ -2,22 +2,25 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Web;
+namespace DddModule\ValueObject\Tests\Unit\Web;
 
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\Web\SchemeName;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Web\SchemeName;
 
 class SchemeNameTest extends TestCase
 {
     public function testValidSchemeName(): void
     {
         $scheme = new SchemeName('git+ssh');
-        $this->assertInstanceOf('MicroModule\ValueObject\Web\SchemeName', $scheme);
+        $this->assertInstanceOf('DddModule\ValueObject\Web\SchemeName', $scheme);
     }
 
-    /** @expectedException MicroModule\ValueObject\Exception\InvalidNativeArgumentException */
+
     public function testInvalidSchemeName(): void
     {
+        $this->expectException(InvalidNativeArgumentException::class);
+
         new SchemeName('ht*tp');
     }
 }

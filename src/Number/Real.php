@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Number;
+namespace DddModule\ValueObject\Number;
 
-use MicroModule\ValueObject\Exception\InvalidNativeArgumentException;
-use MicroModule\ValueObject\Number\Integer as IntegerValueObject;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Number\Integer as IntegerValueObject;
+use DddModule\ValueObject\ValueObjectInterface;
 
 /**
  * Class Real.
@@ -59,7 +59,7 @@ class Real implements ValueObjectInterface, NumberInterface
             return false;
         }
 
-        return $this->toNative() === $real->toNative();
+        return abs(($this->toNative() - $real->toNative())/$real->toNative()) < 0.0000000000001;
     }
 
     /**

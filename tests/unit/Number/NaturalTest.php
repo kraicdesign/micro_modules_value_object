@@ -2,16 +2,18 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Number;
+namespace DddModule\ValueObject\Tests\Unit\Number;
 
-use MicroModule\ValueObject\Number\Natural;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Number\Natural;
+use DddModule\ValueObject\Tests\Unit\TestCase;
 
 class NaturalTest extends TestCase
 {
-    /** @expectedException MicroModule\ValueObject\Exception\InvalidNativeArgumentException */
     public function testInvalidNativeArgument(): void
     {
+        $this->expectException(InvalidNativeArgumentException::class);
+
         new Natural(-2);
     }
 }

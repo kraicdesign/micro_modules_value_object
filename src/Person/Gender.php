@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Person;
+namespace DddModule\ValueObject\Person;
 
-use MicroModule\ValueObject\Enum\Enum;
+use DddModule\ValueObject\Enum\Enum;
 
 /**
  * Class Gender.

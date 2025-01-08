@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Geography;
+namespace DddModule\ValueObject\Tests\Unit\Geography;
 
-use MicroModule\ValueObject\Geography\Address;
-use MicroModule\ValueObject\Geography\Country;
-use MicroModule\ValueObject\Geography\CountryCode;
-use MicroModule\ValueObject\Geography\Street;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Geography\Address;
+use DddModule\ValueObject\Geography\Country;
+use DddModule\ValueObject\Geography\CountryCode;
+use DddModule\ValueObject\Geography\Street;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class AddressTest extends TestCase
 {
     /** @var Address */
-    protected $address;
+    protected Address $address;
 
     protected function setUp(): void
     {
@@ -36,9 +36,10 @@ class AddressTest extends TestCase
         $this->assertTrue($this->address->sameValueAs($fromNativeAddress));
     }
 
-    /** @expectedException \BadMethodCallException */
     public function testInvalidFromNative(): void
     {
+        $this->expectException(\BadMethodCallException::class);
+
         Address::fromNative('invalid');
     }
 
@@ -118,7 +119,7 @@ class AddressTest extends TestCase
     {
         $addressString = <<<ADDR
 Test Test
-45 via Manara
+3 via Manara
 Altamura BARI 70022
 Italy
 ADDR;

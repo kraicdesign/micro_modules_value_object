@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Structure;
+namespace DddModule\ValueObject\Tests\Unit\Structure;
 
-use MicroModule\ValueObject\Number\Integer;
-use MicroModule\ValueObject\Number\Natural;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Structure\Collection;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Number\Integer;
+use DddModule\ValueObject\Number\Natural;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Structure\Collection;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 use SplFixedArray;
 
 class CollectionTest extends TestCase

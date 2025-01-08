@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\DateTime;
+namespace DddModule\ValueObject\DateTime;
 
-use MicroModule\ValueObject\DateTime\Exception\InvalidDateException;
-use MicroModule\ValueObject\DateTime\Exception\InvalidTimeZoneException;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\DateTime\Exception\InvalidDateException;
+use DddModule\ValueObject\DateTime\Exception\InvalidTimeZoneException;
+use DddModule\ValueObject\ValueObjectInterface;
 use DateTime as BaseDateTime;
 use Exception;
 
@@ -120,7 +120,7 @@ class DateTimeWithTimeZone implements ValueObjectInterface
             return false;
         }
 
-        return $this->toNativeDateTime() === $dateTimeWithTimeZone->toNativeDateTime();
+        return $this->toNativeDateTime()->getTimestamp() === $dateTimeWithTimeZone->toNativeDateTime()->getTimestamp();
     }
 
     /**
