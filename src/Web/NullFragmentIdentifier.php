@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Web;
+namespace DddModule\ValueObject\Web;
 
 /**
  * Class NullFragmentIdentifier.

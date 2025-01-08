@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Web;
+namespace DddModule\ValueObject\Web;
 
-use MicroModule\ValueObject\Exception\InvalidNativeArgumentException;
-use Zend\Validator\Hostname as Validator;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use Laminas\Validator\Hostname as Validator;
 
 /**
  * Class Hostname.

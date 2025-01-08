@@ -1,13 +1,13 @@
 {
-    "name": "micro-module/value-object",
+    "name": "ddd-module/value-object",
     "license": "proprietary",
     "type": "library",
     "description": "A PHP library/collection of classes aimed immutable objects.",
     "require": {
         "php": "^8.0",
+        "ddd-module/geotools": "^1.0",
+        "laminas/laminas-validator": "^3.0",
         "marc-mabe/php-enum": "^4.0",
-        "micro-module/geotools": "^0.8",
-        "micro-module/laminas-validator": "^2.14",
         "moneyphp/money": "^4.0",
         "ramsey/uuid": "^4.2"
     },
@@ -19,25 +19,28 @@
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-mockery": "^0.12",
         "phpstan/phpstan-phpunit": "^0.12",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^10.0",
         "roave/security-advisories": "dev-master",
         "symplify/easy-coding-standard": "^9.4",
-        "vimeo/psalm": "^4.9"
+        "vimeo/psalm": "^5.0"
     },
     "config": {
         "preferred-install": {
             "*": "dist"
         },
+        "allow-plugins": {
+            "php-http/discovery": false
+        },
         "sort-packages": true
     },
     "autoload": {
         "psr-4": {
-            "MicroModule\\ValueObject\\": "src"
+            "DddModule\\ValueObject\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MicroModule\\ValueObject\\Tests\\Unit\\": "tests/unit"
+            "DddModule\\ValueObject\\Tests\\Unit\\": "tests/unit"
         }
     }
 }

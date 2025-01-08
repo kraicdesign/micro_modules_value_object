@@ -2,16 +2,18 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\NullValue;
+namespace DddModule\ValueObject\Tests\Unit\NullValue;
 
-use MicroModule\ValueObject\NullValue\NullValue;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use BadMethodCallException;
+use DddModule\ValueObject\NullValue\NullValue;
+use DddModule\ValueObject\Tests\Unit\TestCase;
 
 class NullValueTest extends TestCase
 {
-    /** @expectedException \BadMethodCallException */
     public function testFromNative(): void
     {
+        $this->expectException(BadMethodCallException::class);
+
         NullValue::fromNative();
     }
 
@@ -27,7 +29,7 @@ class NullValueTest extends TestCase
     {
         $null = NullValue::create();
 
-        $this->assertInstanceOf('MicroModule\ValueObject\NullValue\NullValue', $null);
+        $this->assertInstanceOf('DddModule\ValueObject\NullValue\NullValue', $null);
     }
 
     public function testToString(): void

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Person;
+namespace DddModule\ValueObject\Tests\Unit\Person;
 
-use MicroModule\ValueObject\Person\Age;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Person\Age;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class AgeTest extends TestCase
 {

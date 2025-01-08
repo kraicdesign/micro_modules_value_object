@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Number;
+namespace DddModule\ValueObject\Number;
 
 /**
  * Interface NumberInterface.

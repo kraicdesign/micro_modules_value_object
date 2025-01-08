@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Climate;
+namespace DddModule\ValueObject\Climate;
 
-use MicroModule\ValueObject\Number\Real;
+use DddModule\ValueObject\Number\Real;
 
 /**
  * Class Temperature.

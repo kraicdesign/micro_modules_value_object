@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Geography;
+namespace DddModule\ValueObject\Tests\Unit\Geography;
 
-use MicroModule\ValueObject\Geography\Coordinate;
-use MicroModule\ValueObject\Geography\Ellipsoid;
-use MicroModule\ValueObject\Geography\Latitude;
-use MicroModule\ValueObject\Geography\Longitude;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Geography\Coordinate;
+use DddModule\ValueObject\Geography\Ellipsoid;
+use DddModule\ValueObject\Geography\Latitude;
+use DddModule\ValueObject\Geography\Longitude;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class CoordinateTest extends TestCase
 {
@@ -36,9 +36,10 @@ class CoordinateTest extends TestCase
         $this->assertTrue($this->coordinate->sameValueAs($fromNativeCoordinate));
     }
 
-    /** @expectedException \BadMethodCallException */
     public function testInvalidFromNative(): void
     {
+        $this->expectException(\BadMethodCallException::class);
+
         Coordinate::fromNative(40.829137);
     }
 
@@ -106,7 +107,7 @@ class CoordinateTest extends TestCase
         );
 
         $distance = $this->coordinate->distanceFrom($newYork);
-        $this->assertSame(7609068.4225575, $distance->toNative());
+        $this->assertSame(7609068.422557512, $distance->toNative());
     }
 
     public function testToString(): void

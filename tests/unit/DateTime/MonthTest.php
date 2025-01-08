@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\DateTime;
+namespace DddModule\ValueObject\Tests\Unit\DateTime;
 
-use MicroModule\ValueObject\DateTime\Month;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\DateTime\Month;
+use DddModule\ValueObject\Tests\Unit\TestCase;
 
 class MonthTest extends TestCase
 {

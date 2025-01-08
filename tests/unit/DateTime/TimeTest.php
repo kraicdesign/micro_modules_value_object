@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\DateTime;
+namespace DddModule\ValueObject\Tests\Unit\DateTime;
 
-use MicroModule\ValueObject\DateTime\Hour;
-use MicroModule\ValueObject\DateTime\Minute;
-use MicroModule\ValueObject\DateTime\Second;
-use MicroModule\ValueObject\DateTime\Time;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\DateTime\Hour;
+use DddModule\ValueObject\DateTime\Minute;
+use DddModule\ValueObject\DateTime\Second;
+use DddModule\ValueObject\DateTime\Time;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class TimeTest extends TestCase
 {

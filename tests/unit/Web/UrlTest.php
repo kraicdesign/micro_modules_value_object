@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Web;
+namespace DddModule\ValueObject\Tests\Unit\Web;
 
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
-use MicroModule\ValueObject\Web\FragmentIdentifier;
-use MicroModule\ValueObject\Web\Hostname;
-use MicroModule\ValueObject\Web\NullPortNumber;
-use MicroModule\ValueObject\Web\Path;
-use MicroModule\ValueObject\Web\PortNumber;
-use MicroModule\ValueObject\Web\QueryString;
-use MicroModule\ValueObject\Web\SchemeName;
-use MicroModule\ValueObject\Web\Url;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Web\FragmentIdentifier;
+use DddModule\ValueObject\Web\Hostname;
+use DddModule\ValueObject\Web\NullPortNumber;
+use DddModule\ValueObject\Web\Path;
+use DddModule\ValueObject\Web\PortNumber;
+use DddModule\ValueObject\Web\QueryString;
+use DddModule\ValueObject\Web\SchemeName;
+use DddModule\ValueObject\Web\Url;
 
 class UrlTest extends TestCase
 {
@@ -152,7 +152,7 @@ class UrlTest extends TestCase
         $this->assertSame($nativeUrlString, $authlessUrl->__toString());
 
         Url::fromNative($nativeUrlString);
-        $this->assertSame($nativeUrlString, Url::fromNative($authlessUrl)->__toString());
+        $this->assertSame($nativeUrlString, Url::fromNative($nativeUrlString)->__toString());
     }
 
     public function testNullPortUrlToString(): void

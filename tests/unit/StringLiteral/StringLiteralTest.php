@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\StringLiteral;
+namespace DddModule\ValueObject\Tests\Unit\StringLiteral;
 
-use MicroModule\ValueObject\Exception\InvalidNativeArgumentException;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 use TypeError;
 
 class StringLiteralTest extends TestCase

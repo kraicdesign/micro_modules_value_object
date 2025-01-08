@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Structure;
+namespace DddModule\ValueObject\Structure;
 
-use MicroModule\ValueObject\Logical\Boolean;
-use MicroModule\ValueObject\NullValue\NullValue;
-use MicroModule\ValueObject\Number\Integer;
-use MicroModule\ValueObject\Number\Natural;
-use MicroModule\ValueObject\Number\Real;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Logical\Boolean;
+use DddModule\ValueObject\NullValue\NullValue;
+use DddModule\ValueObject\Number\Integer;
+use DddModule\ValueObject\Number\Natural;
+use DddModule\ValueObject\Number\Real;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\ValueObjectInterface;
 use InvalidArgumentException;
 use SplFixedArray;
 
@@ -63,7 +63,7 @@ class Collection implements ValueObjectInterface
         }
 
         if (is_iterable($item)) {
-            return self::isAssocArray($item) ? Dictionary::fromNative($item) : self::fromNative($item);
+            return static::isAssocArray($item) ? Dictionary::fromNative($item) : static::fromNative($item);
         }
 
         if (is_int($item)) {

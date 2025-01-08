@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\DateTime;
+namespace DddModule\ValueObject\Tests\Unit\DateTime;
 
-use MicroModule\ValueObject\DateTime\TimeZone;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\DateTime\Exception\InvalidTimeZoneException;
+use DddModule\ValueObject\DateTime\TimeZone;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class TimeZoneTest extends TestCase
 {
@@ -72,11 +73,10 @@ class TimeZoneTest extends TestCase
         $this->assertEquals('Europe/Madrid', $timeZone->__toString());
     }
 
-    /**
-     * @expectedException \MicroModule\ValueObject\DateTime\Exception\InvalidTimeZoneException
-     */
     public function testExceptionOnInvalidTimeZoneName(): void
     {
+        $this->expectException(InvalidTimeZoneException::class);
+
         new TimeZone(new StringLiteral('Mars/Phobos'));
     }
 }

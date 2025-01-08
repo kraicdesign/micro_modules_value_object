@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\DateTime;
+namespace DddModule\ValueObject\Tests\Unit\DateTime;
 
-use MicroModule\ValueObject\DateTime\Minute;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\DateTime\Minute;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Tests\Unit\TestCase;
 
 class MinuteTest extends TestCase
 {
@@ -23,9 +24,10 @@ class MinuteTest extends TestCase
         $this->assertEquals(intval(date('i')), $minute->toNative());
     }
 
-    /** @expectedException MicroModule\ValueObject\Exception\InvalidNativeArgumentException */
     public function testInvalidMinute(): void
     {
+        $this->expectException(InvalidNativeArgumentException::class);
+
         new Minute(60);
     }
 }

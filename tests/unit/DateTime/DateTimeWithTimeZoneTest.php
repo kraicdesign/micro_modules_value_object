@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\DateTime;
+namespace DddModule\ValueObject\Tests\Unit\DateTime;
 
-use MicroModule\ValueObject\DateTime\Date;
-use MicroModule\ValueObject\DateTime\DateTime;
-use MicroModule\ValueObject\DateTime\DateTimeWithTimeZone;
-use MicroModule\ValueObject\DateTime\Hour;
-use MicroModule\ValueObject\DateTime\Minute;
-use MicroModule\ValueObject\DateTime\Month;
-use MicroModule\ValueObject\DateTime\MonthDay;
-use MicroModule\ValueObject\DateTime\Second;
-use MicroModule\ValueObject\DateTime\Time;
-use MicroModule\ValueObject\DateTime\TimeZone;
-use MicroModule\ValueObject\DateTime\Year;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\DateTime\Date;
+use DddModule\ValueObject\DateTime\DateTime;
+use DddModule\ValueObject\DateTime\DateTimeWithTimeZone;
+use DddModule\ValueObject\DateTime\Hour;
+use DddModule\ValueObject\DateTime\Minute;
+use DddModule\ValueObject\DateTime\Month;
+use DddModule\ValueObject\DateTime\MonthDay;
+use DddModule\ValueObject\DateTime\Second;
+use DddModule\ValueObject\DateTime\Time;
+use DddModule\ValueObject\DateTime\TimeZone;
+use DddModule\ValueObject\DateTime\Year;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
 
 class DateTimeWithTimeZoneTest extends TestCase
 {
@@ -84,13 +84,14 @@ class DateTimeWithTimeZoneTest extends TestCase
         $timeZone1 = new TimeZone(new StringLiteral('Europe/Madrid'));
 
         $date2 = new Date(new Year(2013), Month::DECEMBER(), new MonthDay(3));
-        $time2 = new Time(new Hour(19), new Minute(50), new Second(10));
+        $time2 = new Time(new Hour(20), new Minute(50), new Second(10));
         $timeZone2 = new TimeZone(new StringLiteral('Europe/London'));
+
+        $this->assertTrue((new DateTimeWithTimeZone(new DateTime($date1, $time1)))->sameTimestampAs(new DateTimeWithTimeZone(new DateTime($date2, $time2))));
 
         $dateTimeWithTz1 = new DateTimeWithTimeZone(new DateTime($date1, $time1), $timeZone1);
         $dateTimeWithTz2 = new DateTimeWithTimeZone(new DateTime($date2, $time2), $timeZone2);
 
-        $this->assertTrue($dateTimeWithTz1->sameTimestampAs($dateTimeWithTz2));
         $this->assertFalse($dateTimeWithTz1->sameValueAs($dateTimeWithTz2));
 
         $mock = $this->getMockBuilder(ValueObjectInterface::class)->getMock();

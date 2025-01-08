@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Geography;
+namespace DddModule\ValueObject\Tests\Unit\Geography;
 
-use MicroModule\ValueObject\Geography\CountryCode;
-use MicroModule\ValueObject\Geography\CountryCodeName;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Geography\CountryCode;
+use DddModule\ValueObject\Geography\CountryCodeName;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\Tests\Unit\TestCase;
 
 class CountryCodeNameTest extends TestCase
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\DateTime;
+namespace DddModule\ValueObject\DateTime;
 
-use MicroModule\ValueObject\DateTime\Exception\InvalidTimeZoneException;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\DateTime\Exception\InvalidTimeZoneException;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\ValueObjectInterface;
 use DateTimeZone;
 
 class TimeZone implements ValueObjectInterface

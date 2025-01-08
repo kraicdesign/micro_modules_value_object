@@ -2,25 +2,27 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Web;
+namespace DddModule\ValueObject\Tests\Unit\Web;
 
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\Web\EmailAddress;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Web\EmailAddress;
 
 class EmailAddressTest extends TestCase
 {
     public function testValidEmailAddress(): void
     {
         $email1 = new EmailAddress('foo@bar.com');
-        $this->assertInstanceOf('MicroModule\ValueObject\Web\EmailAddress', $email1);
+        $this->assertInstanceOf('DddModule\ValueObject\Web\EmailAddress', $email1);
 
         $email2 = new EmailAddress('foo@[120.0.0.1]');
-        $this->assertInstanceOf('MicroModule\ValueObject\Web\EmailAddress', $email2);
+        $this->assertInstanceOf('DddModule\ValueObject\Web\EmailAddress', $email2);
     }
 
-    /** @expectedException MicroModule\ValueObject\Exception\InvalidNativeArgumentException */
     public function testInvalidEmailAddress(): void
     {
+        $this->expectException(InvalidNativeArgumentException::class);
+
         new EmailAddress('invalid');
     }
 
@@ -38,6 +40,6 @@ class EmailAddressTest extends TestCase
         $domainPart = $email->getDomainPart();
 
         $this->assertEquals('bar.com', $domainPart->toNative());
-        $this->assertInstanceOf('MicroModule\ValueObject\Web\Domain', $domainPart);
+        $this->assertInstanceOf('DddModule\ValueObject\Web\Domain', $domainPart);
     }
 }

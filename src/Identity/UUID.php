@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Identity;
+namespace DddModule\ValueObject\Identity;
 
 use InvalidArgumentException;
-use MicroModule\ValueObject\Exception\InvalidNativeArgumentException;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\ValueObjectInterface;
 use Exception;
 use Ramsey\Uuid\Uuid as BaseUuid;
 use Ramsey\Uuid\UuidInterface;

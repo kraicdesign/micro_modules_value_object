@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Logical;
+namespace DddModule\ValueObject\Logical;
 
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\ValueObjectInterface;
 
 /**
  * Class Boolean.

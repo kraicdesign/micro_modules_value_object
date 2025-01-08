@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\DateTime;
+namespace DddModule\ValueObject\Tests\Unit\DateTime;
 
 use DateTime;
-use MicroModule\ValueObject\DateTime\Date;
-use MicroModule\ValueObject\DateTime\Exception\InvalidDateException;
-use MicroModule\ValueObject\DateTime\Month;
-use MicroModule\ValueObject\DateTime\MonthDay;
-use MicroModule\ValueObject\DateTime\Year;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\DateTime\Date;
+use DddModule\ValueObject\DateTime\Exception\InvalidDateException;
+use DddModule\ValueObject\DateTime\Month;
+use DddModule\ValueObject\DateTime\MonthDay;
+use DddModule\ValueObject\DateTime\Year;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\ValueObjectInterface;
+use Throwable;
 
 class DateTest extends TestCase
 {
@@ -41,7 +42,8 @@ class DateTest extends TestCase
 
     public function testAlmostValidDateException(): void
     {
-        self::expectError();
+        $this->expectException(Throwable::class);
+
         new Date(new Year(2013), Month::FEBRUARY(), new MonthDay(31));
     }
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\DateTime\Exception;
+namespace DddModule\ValueObject\DateTime\Exception;
 
 use Exception;
 

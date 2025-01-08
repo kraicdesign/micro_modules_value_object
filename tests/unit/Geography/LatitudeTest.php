@@ -2,16 +2,17 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Geography;
+namespace DddModule\ValueObject\Tests\Unit\Geography;
 
-use MicroModule\ValueObject\Geography\Latitude;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Geography\Latitude;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use TypeError;
 
 class LatitudeTest extends TestCase
 {
     public function testValidLatitude(): void
     {
-        new Latitude(40.829137);
+        $this->assertInstanceOf(Latitude::class, new Latitude(40.829137));
     }
 
     public function testNormalization(): void
@@ -20,9 +21,11 @@ class LatitudeTest extends TestCase
         $this->assertEquals(90, $latitude->toNative());
     }
 
-    /** @expectedException MicroModule\ValueObject\Exception\InvalidNativeArgumentException */
     public function testInvalidLatitude(): void
     {
+        $this->expectException(TypeError::class);
+
+        /** @noinspection PhpStrictTypeCheckingInspection */
         new Latitude('invalid');
     }
 }

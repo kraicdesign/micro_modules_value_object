@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Geography;
+namespace DddModule\ValueObject\Geography;
 
-use MicroModule\ValueObject\Number\Real;
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\Number\Real;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\ValueObjectInterface;
 use BadMethodCallException;
 use League\Geotools\Convert\Convert;
 use League\Geotools\Coordinate\Coordinate as BaseCoordinate;

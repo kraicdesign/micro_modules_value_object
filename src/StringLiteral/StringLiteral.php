@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\StringLiteral;
+namespace DddModule\ValueObject\StringLiteral;
 
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\ValueObjectInterface;
 
 /**
  * Class StringLiteral.

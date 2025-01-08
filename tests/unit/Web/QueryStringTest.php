@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Web;
+namespace DddModule\ValueObject\Tests\Unit\Web;
 
-use MicroModule\ValueObject\Structure\Dictionary;
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\Web\NullQueryString;
-use MicroModule\ValueObject\Web\QueryString;
+use DddModule\ValueObject\Exception\InvalidNativeArgumentException;
+use DddModule\ValueObject\Structure\Dictionary;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Web\NullQueryString;
+use DddModule\ValueObject\Web\QueryString;
 
 class QueryStringTest extends TestCase
 {
@@ -15,22 +16,22 @@ class QueryStringTest extends TestCase
     {
         $query = new QueryString('?foo=bar');
 
-        $this->assertInstanceOf('MicroModule\ValueObject\Web\QueryString', $query);
+        $this->assertInstanceOf('DddModule\ValueObject\Web\QueryString', $query);
     }
 
     public function testEmptyQueryString(): void
     {
         $query = new NullQueryString();
 
-        $this->assertInstanceOf('MicroModule\ValueObject\Web\QueryString', $query);
+        $this->assertInstanceOf('DddModule\ValueObject\Web\QueryString', $query);
 
         $dictionary = $query->toDictionary();
-        $this->assertInstanceOf('MicroModule\ValueObject\Structure\Dictionary', $dictionary);
+        $this->assertInstanceOf('DddModule\ValueObject\Structure\Dictionary', $dictionary);
     }
 
-    /** @expectedException MicroModule\ValueObject\Exception\InvalidNativeArgumentException */
     public function testInvalidQueryString(): void
     {
+        $this->expectException(InvalidNativeArgumentException::class);
         new QueryString('invalìd');
     }
 
@@ -39,7 +40,7 @@ class QueryStringTest extends TestCase
         $query = new QueryString('?foo=bar&array[]=one&array[]=two');
         $dictionary = $query->toDictionary();
 
-        $this->assertInstanceOf('MicroModule\ValueObject\Structure\Dictionary', $dictionary);
+        $this->assertInstanceOf('DddModule\ValueObject\Structure\Dictionary', $dictionary);
 
         $array = [
             'foo' => 'bar',

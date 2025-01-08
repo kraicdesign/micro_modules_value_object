@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Tests\Unit\Web;
+namespace DddModule\ValueObject\Tests\Unit\Web;
 
-use MicroModule\ValueObject\Tests\Unit\TestCase;
-use MicroModule\ValueObject\Web\Domain;
+use DddModule\ValueObject\Tests\Unit\TestCase;
+use DddModule\ValueObject\Web\Domain;
 
 class DomainTest extends TestCase
 {
@@ -14,7 +14,7 @@ class DomainTest extends TestCase
         $ip = Domain::specifyType('127.0.0.1');
         $hostname = Domain::specifyType('example.com');
 
-        $this->assertInstanceOf('MicroModule\ValueObject\Web\IPAddress', $ip);
-        $this->assertInstanceOf('MicroModule\ValueObject\Web\Hostname', $hostname);
+        $this->assertInstanceOf('DddModule\ValueObject\Web\IPAddress', $ip);
+        $this->assertInstanceOf('DddModule\ValueObject\Web\Hostname', $hostname);
     }
 }

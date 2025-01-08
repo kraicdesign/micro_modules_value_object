@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject\Structure;
+namespace DddModule\ValueObject\Structure;
 
-use MicroModule\ValueObject\StringLiteral\StringLiteral;
-use MicroModule\ValueObject\ValueObjectInterface;
+use DddModule\ValueObject\StringLiteral\StringLiteral;
+use DddModule\ValueObject\ValueObjectInterface;
 use InvalidArgumentException;
 use SplFixedArray;
 
@@ -48,7 +48,7 @@ class Dictionary extends Collection
                 $type = is_object($keyValuePair) ? get_class($keyValuePair) : gettype($keyValuePair);
 
                 throw new InvalidArgumentException(
-                    sprintf('Passed SplFixedArray object must contains "KeyValuePair" objects only. "%s" given.', $type)
+                    sprintf('Passed SplFixedArray object must contain "KeyValuePair" objects only. "%s" given.', $type)
                 );
             }
         }

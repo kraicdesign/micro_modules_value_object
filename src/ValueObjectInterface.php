@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MicroModule\ValueObject;
+namespace DddModule\ValueObject;
 
 /**
  * Interface ValueObjectInterface.
