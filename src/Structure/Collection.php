@@ -86,6 +86,13 @@ class Collection implements ValueObjectInterface
      */
     public function __construct(SplFixedArray $items)
     {
+        $this->validateItems($items);
+
+        $this->items = $items;
+    }
+
+    protected function validateItems(SplFixedArray $items): void
+    {
         foreach ($items as $item) {
             if (false === $item instanceof ValueObjectInterface) {
                 $type = is_object($item) ? get_class($item) : gettype($item);
@@ -98,8 +105,6 @@ class Collection implements ValueObjectInterface
                 );
             }
         }
-
-        $this->items = $items;
     }
 
     /**
@@ -185,6 +190,26 @@ class Collection implements ValueObjectInterface
     public function __toString(): string
     {
         return serialize($this->toArray());
+    }
+
+    public function map(callable $callback): array
+    {
+        $result = [];
+
+        foreach ($this->items->toArray() as $item) {
+            $result[] = $callback($item);
+        }
+
+        return $result;
+    }
+
+    public function sortBy(callable $callback): static
+    {
+        $items = $this->items->toArray();
+
+        usort($items, $callback);
+
+        return new static(SplFixedArray::fromArray($items));
     }
 
     /**
